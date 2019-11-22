@@ -26,7 +26,7 @@ public class HeroFindAllResponseDto {
         modifiedDate = toStringLocalDateTime(entity.getModifiedDate());
     }
 
-    public String toStringLocalDateTime(LocalDateTime modifiedDate){
+    public String toStringLocalDateTime(LocalDateTime modifiedDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return Optional.ofNullable(modifiedDate)
                 .map(formatter::format)

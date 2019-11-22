@@ -1,15 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.autocomplete');
     var instances = M.Autocomplete.init(elems);
 });
 
 index = {
-    save : function () {
+    save: function () {
         var hero = {
             name: $('#createName').val(),
             age: $('#createAge').val(),
@@ -23,12 +23,12 @@ index = {
             dataType: 'json',
             contentType: 'application/json; charset=utf-8'
         }).done(function () {
-            location.href="/?page=1";
+            location.href = "/?page=1";
         }).fail(function () {
             alert('Please try again');
         });
     },
-    findById : function (id) {
+    findById: function (id) {
         $.ajax({
             url: '/find',
             type: 'post',
@@ -44,7 +44,7 @@ index = {
             alert('Please try again');
         })
     },
-    update : function (page) {
+    update: function (page) {
         var hero = {
             id: $('#updateModal').data('id'),
             name: $('#updateName').val(),
@@ -59,12 +59,12 @@ index = {
             dataType: 'json',
             contentType: 'application/json; charset=utf-8'
         }).done(function () {
-            location.href="/?page=" + page;
+            location.href = "/?page=" + page;
         }).fail(function () {
             alert('Please try again');
         });
     },
-    deleteById : function (id, totalElements, size, page) {
+    deleteById: function (id, totalElements, size, page) {
         $.ajax({
             url: '/delete',
             type: 'delete',
@@ -72,11 +72,11 @@ index = {
             dataType: 'json',
             contentType: 'application/json; charset=utf-8'
         }).done(function () {
-            if(totalElements % size === 1) {
-                location.href="/?page=" + page;
-            }else {
+            if (totalElements % size === 1) {
+                location.href = "/?page=" + page;
+            } else {
                 page++;
-                location.href="/?page=" + page;
+                location.href = "/?page=" + page;
             }
         }).fail(function () {
             alert('Please try again');

@@ -46,5 +46,7 @@ public class HeroService {
     }
 
     @Transactional
-    public void HeroDeleteByIdRequest(Long id) { heroRepository.deleteById(id); }
+    public void HeroDeleteByIdRequest(Long id) {
+        heroRepository.deleteById(id);
+    }
 }

@@ -16,7 +16,7 @@ public class HeroUpdateRequestDto {
     private int age;
     private String note;
 
-    public Hero toEntity(){
+    public Hero toEntity() {
         return Hero.builder()
                 .id(id)
                 .name(name)
