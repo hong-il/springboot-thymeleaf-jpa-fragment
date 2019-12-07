@@ -2165,6 +2165,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    margin: -8px 0px -8px 0px;
 }
 
 /**
@@ -2951,6 +2952,7 @@ ul.staggered-list li {
     padding-top: 20px;
     color: #fff;
     background-color: #ee6e73;
+    margin-bottom: -8px;
 }
 
 .page-footer .footer-copyright {
