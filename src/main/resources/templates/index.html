@@ -9,38 +9,8 @@
     <main>
         <!-- Heroes Table -->
         <table>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Note</th>
-                <th>Created Date</th>
-                <th>Modified Date</th>
-                <th>Modify</th>
-                <th>Delete</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr th:each="hero : ${pages}" th:object="${hero}">
-                <td th:text="*{name}"></td>
-                <td th:text="*{age}"></td>
-                <td th:text="*{note}"></td>
-                <td th:text="*{createdDate}"></td>
-                <td th:text="*{modifiedDate}"></td>
-                <!-- Update Modal Trigger -->
-                <td>
-                    <a href="#updateModal" class="modal-trigger" th:text="modify"
-                       th:onclick="|javascript:findById(*{id})|">
-                    </a>
-                </td>
-                <td>
-                    <a href="#!" th:text="delete"
-                       th:onclick="|javascript:deleteById(*{id}, ${pages.totalElements}, ${pages.size}, ${pages.getNumber()})|">
-                    </a>
-                </td>
-            </tr>
-            </tbody>
+            <thead th:replace="/fragment/table :: tableHead"></thead>
+            <tbody th:replace="/fragment/table :: tableBody(pages = ${pages})"></tbody>
         </table>
 
         <ul class="pagination" th:with="start = ${start}, last = ${last}">
@@ -152,7 +122,7 @@
         </div>
     </main>
 
-    <th:block th:replace="/fragment/footer"></th:block>
+    <footer th:replace="/fragment/footer"></footer>
     <th:block th:replace="/fragment/js"></th:block>
 </body>
 </html>
