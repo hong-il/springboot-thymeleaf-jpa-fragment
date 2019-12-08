@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <ul th:fragment="pagination(pages, start, last)" class="pagination" th:with="start = ${start}, last = ${last}">
+        <li><a th:href="@{/(page = 1)}" th:text="First" aria-label="First"></a></li>
+
+        <li th:class="${pages.first} ? 'disabled'">
+            <a th:href="${pages.first} ? '#' : @{/(page = ${pages.getNumber()})}">
+                <i class="material-icons">chevron_left</i></a></li>
+
+        <li th:each="page : ${#numbers.sequence(start, last)}" th:class="${page == pages.getNumber() + 1} ? 'active'">
+            <a th:href="@{/(page = ${page})}" th:text="${page}"></a></li>
+
+        <li th:class="${pages.last} ? 'disabled'">
+            <a th:href="${pages.last} ? '#' : @{/(page = ${pages.getNumber() + 2})}">
+                <i class="material-icons">chevron_right</i></a></li>
+
+        <li><a th:href="@{/(page = ${pages.totalPages})}" th:text="Last" aria-label="Last"></a></li>
+    </ul>
+</html>
