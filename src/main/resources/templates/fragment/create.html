@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <!-- Create Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#createModal">Create</a>
+
+    <!-- Create Modal Structure -->
+    <div id="createModal" class="modal modal-fixed-footer">
+        <div class="modal-header">
+            <h4>Create Form</h4>
+        </div>
+        <div class="row input-field">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" id="createName" class="autocomplete">
+                        <label for="createName">Name</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" id="createAge" class="autocomplete">
+                        <label for="createAge">Age</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">edit</i>
+                        <input type="text" id="createNote" class="autocomplete">
+                        <label for="createNote">Note</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+               th:onclick="|javascript:save()|">Save</a>
+        </div>
+    </div>
+</html>

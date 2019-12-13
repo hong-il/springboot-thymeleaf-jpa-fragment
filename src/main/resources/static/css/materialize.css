@@ -5994,7 +5994,6 @@ body.keyboard-focused .dropdown-content li:focus {
 
 .modal.modal-fixed-footer {
     padding: 0;
-    height: 50%;
 }
 
 .modal.modal-fixed-footer .modal-content {
